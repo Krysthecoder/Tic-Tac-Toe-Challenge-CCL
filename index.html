@@ -25,18 +25,18 @@
     <div class="container-fluid d-flex justify-content-between p-5 w-75 game-header">
         <div class="card">
             <div class="card-body text-center">
-                <p class="card-text">0</p>
+                <p class="card-text" id="playerOneScore">0</p>
                 <p class="card-text">Player 1</p>
             </div>
         </div>
 
         <div class="my-auto">
-            <h1>Welcome to Tic, Tac, Toe!</h1>
+            <h1 id="gameTitle">Welcome to Tic, Tac, Toe!</h1>
         </div>
 
         <div class="card">
             <div class="card-body text-center">
-                <p class="card-text">0</p>
+                <p class="card-text"id="playerTwoScore">0</p>
                 <p class="card-text">Player 2</p>
             </div>
         </div>
@@ -44,27 +44,27 @@
 
     <div class="container-fluid mt-5 w-75">
         <div class="row mx-auto w-75">
-            <div class="col-xl-4 block"></div>
-            <div class="col-xl-4 block"></div>
-            <div class="col-xl-4 block"></div>
+            <div class="col-xl-4 block" onclick="rowOne(0)"></div>
+            <div class="col-xl-4 block" onclick="rowOne(1)"></div>
+            <div class="col-xl-4 block" onclick="rowOne(2)"></div>
         </div>
 
         <div class="row mx-auto w-75">
-            <div class="col-xl-4 block"></div>
-            <div class="col-xl-4 block"></div>
-            <div class="col-xl-4 block"></div>
+            <div class="col-xl-4 block" onclick="rowTwo(0)"></div>
+            <div class="col-xl-4 block" onclick="rowTwo(1)"></div>
+            <div class="col-xl-4 block" onclick="rowTwo(2)"></div>
         </div>
 
         <div class="row  mb-3 mx-auto w-75">
-            <div class="col-xl-4 block"></div>
-            <div class="col-xl-4 block"></div>
-            <div class="col-xl-4 block"></div>
+            <div class="col-xl-4 block" onclick="rowThree(0)"></div>
+            <div class="col-xl-4 block" onclick="rowThree(1)"></div>
+            <div class="col-xl-4 block" onclick="rowThree(2)"></div>
         </div>
     </div>
 
     <div class="container-fluid w-25 mt-5 mx-auto d-flex justify-content-between">
-        <button class="btn btn-primary">Reset Game</button>
-        <button class="btn btn-primary">New Match</button>
+        <button class="btn btn-primary" id="resetGame">Reset Game</button>
+        <button class="btn btn-primary" id="newMatch">New Match</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -76,6 +76,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
