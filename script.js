@@ -7,6 +7,7 @@ const resetGame = document.getElementById("resetGame");
 const newMatch = document.getElementById('newMatch');
 let gameTitle = document.getElementById('gameTitle')
 
+
 //      Set default values to number so we later just add numbers
 playerOneScore.innerText = 0; 
 playerTwoScore.innerText = 0;
@@ -14,6 +15,10 @@ playerTwoScore.innerText = 0;
 
 //      Identify the player's turn with a true false 
 let playersTurn = true;
+
+
+//      Variable that will help on deciding if is it a tie or not
+let isItTie = true;
 
 
 //      Game grid with the players selection
@@ -68,19 +73,19 @@ function winnerDecider(){
     if(gameGrid[0].join('') === "xxx" || gameGrid[1].join('') === "xxx" ||gameGrid[2].join('') === "xxx"){
         gameTitle.innerText = "Player X has won";
         playerOneScore.innerText ++;
+
     }else if(gameGrid[0].join('') === "ooo" || gameGrid[1].join('') === "ooo" || gameGrid[2].join('') === "ooo"){
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
-    }
-
-    //      Check eah column for the winner
-    if (
+        
+    }else if (    //      Check each column for the winner
         (gameGrid[0][0] === "x") && (gameGrid[1][0] === "x") && (gameGrid[2][0] === "x") ||
         (gameGrid[0][1] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][1] === "x") ||
         (gameGrid[0][2] === "x") && (gameGrid[1][2] === "x") && (gameGrid[2][2] === "x")
     ){
         gameTitle.innerText = "Player X has won";
         playerOneScore.innerText ++;
+        
     }else if(
         (gameGrid[0][0] === "o") && (gameGrid[1][0] === "o") && (gameGrid[2][0] === "o") ||
         (gameGrid[0][1] === "o") && (gameGrid[1][1] === "o") && (gameGrid[2][1] === "o") ||
@@ -88,22 +93,21 @@ function winnerDecider(){
     ){
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
-    }
-
-
-    //      Check diagonally for the winner
-    if(
+        
+    }else if( //      Check diagonally for the winner
         (gameGrid[0][0] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][2] === "x") ||
         (gameGrid[0][2] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][0] === "x")
     ){
         gameTitle.innerText = "Player X has won";
         playerOneScore.innerText ++;
+        
     }else if(
         (gameGrid[0][0] === "o") && (gameGrid[1][1] === "o") && (gameGrid[2][2] === "o") ||
         (gameGrid[0][2] === "o") && (gameGrid[1][1] === "o") && (gameGrid[2][0] === "o")
     ){
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
+        
     }
 }
 
