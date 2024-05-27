@@ -28,10 +28,10 @@ resetGame.addEventListener('click', ()=>{
 
 //      New Match function
 newMatch.addEventListener("click", () => {
-    console.log(gameGrid);
     blocks.map(elem => elem.classList.replace("block-x", "block"));
     blocks.map(elem => elem.classList.replace("block-o", "block"));
     playersTurn = true;
+    gameGrid = [[0,1,2],[3,4,5],[6,7,8]];
 });
 
 
