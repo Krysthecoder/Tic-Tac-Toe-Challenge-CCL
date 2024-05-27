@@ -17,10 +17,6 @@ playerTwoScore.innerText = 0;
 let playersTurn = true;
 
 
-//      Variable that will help on deciding if is it a tie or not
-let isItTie = true;
-
-
 //      Game grid with the players selection
 let gameGrid = [[0,1,2],[3,4,5],[6,7,8]]
 
@@ -66,6 +62,10 @@ function rowThree(elem){
 }
 
 
+//      Function that determines if its a tie
+function isItTie(){
+    return /\d/.test(gameGrid) ? null : gameTitle.innerHTML = "It's a tie!"
+}
 //      Funtion that determines who won the game
 function winnerDecider(){
 
@@ -109,6 +109,9 @@ function winnerDecider(){
         playerTwoScore.innerText ++;
         
     }
+
+    
+    isItTie(); //   calling function to check if it is a tie
 }
 
 
@@ -130,5 +133,6 @@ function X_O_selection(elem){
 
 //      Event Listener that will call the function to change the icon
 blocks.map(elem => elem.addEventListener("click", ()=>{
-    X_O_selection(elem)
+    X_O_selection(elem);
 }));
+
