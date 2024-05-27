@@ -1,5 +1,59 @@
+body{
+    background: url(src/bg4.gif);
+    color: #fff;
+}
+
+nav{
+    background-color: #1d1d1d;
+    border-bottom: 1px solid #d80111;
+}
+.navbar-brand, .navbar-text{
+    color:  #fff;
+}
+
+.card{
+    background: rgba(76, 175, 80, 0.0);
+    color: #fff;
+    border: solid 2px #d80111;
+}
+
 .block{
-    background-color: blanchedalmond;
     height: 10rem;
-    border: solid 1px black;
+    border: solid 1px #000000;
+    background-color: #d80111;
+    transition: ease-in-out .400s;
+}
+
+.block:hover{
+    background-color: rgba(216, 1, 17, 0.3);
+    cursor: pointer;
+}
+
+.block-x{
+    height: 10rem;
+    border: solid 1px #000000;
+    background: url(src/X-png.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.block-o{
+    height: 10rem;
+    border: solid 1px #000000;
+    background: url(src/O-png.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+
+.btn{
+    padding: .8rem;
+    background: rgba(76, 175, 80, 0.0);
+    border: 1px solid #d80111;
+    transition: ease-in-out .400s;
+}
+.btn:hover{
+    padding: .8rem;
+    background: rgba(76, 175, 80, 0.0);
+    border: 1px solid #fff;
 }
