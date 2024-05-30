@@ -1,4 +1,3 @@
-
 //      Getting Global Variables
 let playerOneScore = document.getElementById("playerOneScore");
 let playerTwoScore = document.getElementById('playerTwoScore');
@@ -37,27 +36,11 @@ newMatch.addEventListener("click", () => {
 
 
 //      Set of functions that creates the grid with the X-0 selection
-function rowOne(elem){
+function rowArrSetter(indx, elem){
     if(playersTurn === true){
-        gameGrid[0][elem] = "x"
+        gameGrid[indx][elem] = "x"
     }else if(playersTurn === false){
-        gameGrid[0][elem] = "o"
-    }
-}
-
-function rowTwo(elem){
-    if(playersTurn === true){
-        gameGrid[1][elem] = "x"
-    }else if(playersTurn === false){
-        gameGrid[1][elem] = "o"
-    }
-}
-
-function rowThree(elem){
-    if(playersTurn === true){
-        gameGrid[2][elem] = "x"
-    }else if(playersTurn === false){
-        gameGrid[2][elem] = "o"
+        gameGrid[indx][elem] = "o"
     }
 }
 
@@ -66,15 +49,19 @@ function rowThree(elem){
 function isItTie(){
     return /\d/.test(gameGrid) ? null : gameTitle.innerHTML = "It's a tie!"
 }
+
+
 //      Funtion that determines who won the game
 function winnerDecider(){
 
     //      Check each rows for the winner
     if(gameGrid[0].join('') === "xxx" || gameGrid[1].join('') === "xxx" ||gameGrid[2].join('') === "xxx"){
+        
         gameTitle.innerText = "Player X has won";
         playerOneScore.innerText ++;
 
     }else if(gameGrid[0].join('') === "ooo" || gameGrid[1].join('') === "ooo" || gameGrid[2].join('') === "ooo"){
+        
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
         
@@ -83,6 +70,7 @@ function winnerDecider(){
         (gameGrid[0][1] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][1] === "x") ||
         (gameGrid[0][2] === "x") && (gameGrid[1][2] === "x") && (gameGrid[2][2] === "x")
     ){
+        
         gameTitle.innerText = "Player X has won";
         playerOneScore.innerText ++;
         
@@ -91,6 +79,7 @@ function winnerDecider(){
         (gameGrid[0][1] === "o") && (gameGrid[1][1] === "o") && (gameGrid[2][1] === "o") ||
         (gameGrid[0][2] === "o") && (gameGrid[1][2] === "o") && (gameGrid[2][2] === "o")
     ){
+        
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
         
@@ -98,6 +87,7 @@ function winnerDecider(){
         (gameGrid[0][0] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][2] === "x") ||
         (gameGrid[0][2] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][0] === "x")
     ){
+        
         gameTitle.innerText = "Player X has won";
         playerOneScore.innerText ++;
         
@@ -105,6 +95,7 @@ function winnerDecider(){
         (gameGrid[0][0] === "o") && (gameGrid[1][1] === "o") && (gameGrid[2][2] === "o") ||
         (gameGrid[0][2] === "o") && (gameGrid[1][1] === "o") && (gameGrid[2][0] === "o")
     ){
+        
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
         
@@ -135,4 +126,3 @@ function X_O_selection(elem){
 blocks.map(elem => elem.addEventListener("click", ()=>{
     X_O_selection(elem);
 }));
-
