@@ -11,6 +11,10 @@ nav{
     color:  #fff;
 }
 
+.game-header{
+    flex-direction: column;
+}
+
 .card{
     background: rgba(76, 175, 80, 0.0);
     color: #fff;
@@ -56,4 +60,109 @@ nav{
     padding: .8rem;
     background: rgba(76, 175, 80, 0.0);
     border: 1px solid #fff;
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px){
+
+    .navbar div{
+        width: 95% !important;
+    }
+
+    .game-header{
+        width: 95% !important;
+    }
+    
+    .block{
+        height: 8rem;
+    }
+
+    .block-x{
+        height: 8rem;
+    }
+    
+    .block-o{
+        height: 8rem;
+    }
+
+    .game-buttons{
+        width: 70% !important; 
+    }
+}
+
+@media only screen and (max-width: 767px)  and (min-width: 576px) {
+    
+
+    .navbar div{
+        width: 100% !important;
+        margin: .5rem 1rem !important;
+    }
+
+    .game-header{
+        width: 100% !important;
+    }
+    
+    .game-score-board{
+        justify-content: space-between !important;
+        margin: 0 !important;
+        width: 95% !important;
+    }
+
+    .game-grid-container{
+        margin-top: 0 !important;
+    }
+    
+    .block{
+        height: 6rem;
+        border: solid 1px #000000;
+        background-color: #d80111;
+        transition: ease-in-out .400s;
+    }
+
+    .game-buttons{
+        width: 90% !important; 
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
+    .navbar div{
+        width: 100% !important;
+        margin: .5rem 1rem !important;
+    }
+
+    .game-header{
+        width: 100% !important;
+    }
+    
+    .game-score-board{
+        justify-content: space-between !important;
+        margin: 0 !important;
+        width: 95% !important;
+    }
+
+    .card{
+        width: 5rem !important;
+        height: 7rem !important;
+    }
+
+    .game-grid-container{
+        margin-top: 0 !important;
+        width: 95% !important;
+    }
+    
+    .block{
+        height: 4rem;
+    }
+
+    .block-x{
+        height: 4rem;
+    }
+    
+    .block-o{
+        height: 4rem;
+    }
+
+    .game-buttons{
+        width: 90% !important; 
+    }
 }

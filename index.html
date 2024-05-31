@@ -23,46 +23,52 @@
     </nav>
 
     <div class="container-fluid d-flex justify-content-between p-5 w-75 game-header">
-        <div class="card">
-            <div class="card-body text-center">
-                <p class="card-text" id="playerOneScore">0</p>
-                <p class="card-text">Player 1</p>
-            </div>
-        </div>
-
-        <div class="my-auto">
+        
+        
+        <div class="mx-auto mb-3">
             <h1 id="gameTitle">Welcome to Tic, Tac, Toe!</h1>
         </div>
 
-        <div class="card">
-            <div class="card-body text-center">
-                <p class="card-text"id="playerTwoScore">0</p>
-                <p class="card-text">Player 2</p>
+
+        <div class="game-score-board container-fluid d-flex justify-content-between w-75">
+            <div class="card">
+                <div class="card-body text-center">
+                    <p class="card-text" id="playerOneScore">0</p>
+                    <p class="card-text">Player 1</p>
+                </div>
+            </div>
+    
+    
+            <div class="card">
+                <div class="card-body text-center">
+                    <p class="card-text"id="playerTwoScore">0</p>
+                    <p class="card-text">Player 2</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid mt-5 w-75">
+    <div class="container-fluid mt-5 w-75 game-grid-container">
         <div class="row mx-auto w-75">
-            <div class="col-xl-4 block" onclick="rowArrSetter(0,0)"></div>
-            <div class="col-xl-4 block" onclick="rowArrSetter(0,1)"></div>
-            <div class="col-xl-4 block" onclick="rowArrSetter(0,2)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(0,0)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(0,1)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(0,2)"></div>
         </div>
 
         <div class="row mx-auto w-75">
-            <div class="col-xl-4 block" onclick="rowArrSetter(1,0)"></div>
-            <div class="col-xl-4 block" onclick="rowArrSetter(1,1)"></div>
-            <div class="col-xl-4 block" onclick="rowArrSetter(1,2)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(1,0)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(1,1)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(1,2)"></div>
         </div>
 
         <div class="row  mb-3 mx-auto w-75">
-            <div class="col-xl-4 block" onclick="rowArrSetter(2,0)"></div>
-            <div class="col-xl-4 block" onclick="rowArrSetter(2,1)"></div>
-            <div class="col-xl-4 block" onclick="rowArrSetter(2,2)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(2,0)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(2,1)"></div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 block" onclick="rowArrSetter(2,2)"></div>
         </div>
     </div>
 
-    <div class="container-fluid w-25 mt-5 mx-auto d-flex justify-content-between">
+    <div class="container-fluid w-25 mt-5 mx-auto d-flex justify-content-between game-buttons">
         <button class="btn btn-primary" id="resetGame">Reset Game</button>
         <button class="btn btn-primary" id="newMatch">New Match</button>
     </div>
