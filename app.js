@@ -1,32 +1,32 @@
-//      Getting Global Variables
-let playerOneScore = document.getElementById("playerOneScore");
-let playerTwoScore = document.getElementById('playerTwoScore');
-let blocks = Array.from(document.getElementsByClassName('block'));
+//  Getting Global Variables
+const playerOneScore = document.getElementById("playerOneScore");
+const playerTwoScore = document.getElementById('playerTwoScore');
+const blocks = Array.from(document.getElementsByClassName('block'));
 const resetGame = document.getElementById("resetGame");
 const newMatch = document.getElementById('newMatch');
-let gameTitle = document.getElementById('gameTitle')
+const gameTitle = document.getElementById('gameTitle')
 
 
-//      Set default values to number so we later just add numbers
+//  Set default values to number so we later just add numbers
 playerOneScore.innerText = 0; 
 playerTwoScore.innerText = 0;
 
 
-//      Identify the player's turn with a true false 
+//  Identify the player's turn with a true false 
 let playersTurn = true;
 
 
-//      Game grid with the players selection
-let gameGrid = [[0,1,2],[3,4,5],[6,7,8]]
+//  Game grid with the players selection
+const gameGrid = [[0,1,2],[3,4,5],[6,7,8]]
 
 
-//      Reset function
+//  Reset function
 resetGame.addEventListener('click', ()=>{
     location.reload();
 });
 
 
-//      New Match function
+//  New Match function
 newMatch.addEventListener("click", () => {
     blocks.map(elem => elem.classList.replace("block-x", "block"));
     blocks.map(elem => elem.classList.replace("block-o", "block"));
@@ -35,7 +35,7 @@ newMatch.addEventListener("click", () => {
 });
 
 
-//      Set of functions that creates the grid with the X-0 selection
+//  Set of functions that creates the grid with the X-0 selection
 function rowArrSetter(indx, elem){
     if(playersTurn === true){
         gameGrid[indx][elem] = "x"
@@ -45,16 +45,16 @@ function rowArrSetter(indx, elem){
 }
 
 
-//      Function that determines if its a tie
+//  Function that determines if its a tie
 function isItTie(){
     return /\d/.test(gameGrid) ? null : gameTitle.innerHTML = "It's a tie!"
 }
 
 
-//      Funtion that determines who won the game
+//  Funtion that determines who won the game
 function winnerDecider(){
 
-    //      Check each rows for the winner
+    //  Check each rows for the winner
     if(gameGrid[0].join('') === "xxx" || gameGrid[1].join('') === "xxx" ||gameGrid[2].join('') === "xxx"){
         
         gameTitle.innerText = "Player X has won";
@@ -65,7 +65,7 @@ function winnerDecider(){
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
         
-    }else if (    //      Check each column for the winner
+    }else if (    //    Check each column for the winner
         (gameGrid[0][0] === "x") && (gameGrid[1][0] === "x") && (gameGrid[2][0] === "x") ||
         (gameGrid[0][1] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][1] === "x") ||
         (gameGrid[0][2] === "x") && (gameGrid[1][2] === "x") && (gameGrid[2][2] === "x")
@@ -83,7 +83,7 @@ function winnerDecider(){
         gameTitle.innerText = "Player O has won";
         playerTwoScore.innerText ++;
         
-    }else if( //      Check diagonally for the winner
+    }else if( //    Check diagonally for the winner
         (gameGrid[0][0] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][2] === "x") ||
         (gameGrid[0][2] === "x") && (gameGrid[1][1] === "x") && (gameGrid[2][0] === "x")
     ){
@@ -106,7 +106,7 @@ function winnerDecider(){
 }
 
 
-//      Evaluate the players turn and change the element to X or O
+//  Evaluate the players turn and change the element to X or O
 function X_O_selection(elem){
     if(playersTurn === true){
         elem.classList.replace("block", "block-x");
@@ -122,7 +122,7 @@ function X_O_selection(elem){
 };
 
 
-//      Event Listener that will call the function to change the icon
+//  Event Listener that will call the function to change the icon
 blocks.map(elem => elem.addEventListener("click", ()=>{
     X_O_selection(elem);
 }));

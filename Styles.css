@@ -1,5 +1,5 @@
 body{
-    background: url(src/bg4.gif);
+    background: url(imgs/main-screen-bg.gif);
     color: #fff;
 }
 
@@ -36,7 +36,7 @@ nav{
 .block-x{
     height: 10rem;
     border: solid 1px #000000;
-    background: url(src/X-png.png) no-repeat;
+    background: url(imgs/PlayerX.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
@@ -44,7 +44,7 @@ nav{
 .block-o{
     height: 10rem;
     border: solid 1px #000000;
-    background: url(src/O-png.png) no-repeat;
+    background: url(imgs/PlayerO.png) no-repeat;
     background-size: contain;
     background-position: center center;
 }
