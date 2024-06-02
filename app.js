@@ -37,11 +37,7 @@ newMatch.addEventListener("click", () => {
 
 //  Set of functions that creates the grid with the X-0 selection
 function rowArrSetter(indx, elem){
-    if(playersTurn === true){
-        gameGrid[indx][elem] = "x"
-    }else if(playersTurn === false){
-        gameGrid[indx][elem] = "o"
-    }
+    playersTurn === true ? gameGrid[indx][elem] = "x" : gameGrid[indx][elem] = "o";
 }
 
 
